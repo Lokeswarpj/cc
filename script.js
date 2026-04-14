@@ -1,3 +1,8 @@
+// ================= LOGIN PROTECTION =================
+if (!localStorage.getItem("orgName")) {
+  window.location.href = "login.html";
+}
+
 // ================= ORG DATA =================
 const orgData = {
   "Amazon": [
@@ -84,6 +89,11 @@ function searchMembers() {
 }
 
 // ================= MODAL =================
+const modal = document.getElementById("modal");
+const modalName = document.getElementById("modalName");
+const modalRole = document.getElementById("modalRole");
+const modalProgress = document.getElementById("modalProgress");
+
 function openModal(name, role, progress) {
   modal.style.display = "block";
   modalName.innerText = name;
@@ -95,7 +105,20 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+// ================= LOGOUT =================
+function logout() {
+  localStorage.removeItem("orgName");
+  window.location.href = "login.html";
+}
+
 // ================= THEME =================
 function toggleTheme() {
   document.body.classList.toggle("light");
 }
+
+// ================= CLOSE MODAL ON OUTSIDE CLICK =================
+window.onclick = function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+};

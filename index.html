@@ -14,7 +14,6 @@
     <h2 id="orgName">CorpSphere</h2>
     <p id="orgType"></p>
 
-    <!-- Org Selector -->
     <select id="orgSelect" onchange="switchOrg()">
       <option value="Amazon">Amazon</option>
       <option value="Google">Google</option>
@@ -33,6 +32,7 @@
     </nav>
 
     <button onclick="toggleTheme()">Toggle Theme</button>
+    <button onclick="logout()">Logout</button>
   </aside>
 
   <!-- Main -->
@@ -44,7 +44,7 @@
       <p>Enterprise multi-tenant ecosystem</p>
     </section>
 
-    <!-- Members (Dynamic) -->
+    <!-- Members -->
     <section class="card" id="memberContainer">
       <h2>Member Directory</h2>
     </section>
